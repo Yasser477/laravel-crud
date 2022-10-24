@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CrudController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+
+Route::get('/edit', function () {
+    return view('edit');
+});
+
+Route::post('insert',[CrudController::class , 'insert'])->name('insert');
+Route::get('test',[CrudController::class , 'show']);
+Route::get('edit/{id}', [ CrudController::class, 'edit' ]);
+Route::post('update/{id}', [ CrudController::class, 'update' ]);
