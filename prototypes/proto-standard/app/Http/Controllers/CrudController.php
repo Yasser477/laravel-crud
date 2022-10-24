@@ -26,8 +26,9 @@ class CrudController extends Controller
 
     }
 
-public function update(Request $request, $id){
+    public function update(Request $request, $id){
         $promotion = promotion::where('id', $id)->update(["name"=> $request->name]);
         return redirect('test');
 }
 }
+    
