@@ -38,4 +38,6 @@ Route::post('update/{id}', [ CrudController::class, 'update' ]);
 Route::get('search', [ CrudController::class, 'search']);
 Route::get('search/{searchResult}', [ CrudController::class, 'search']);
 Route::get('addStudent/{id}',[ studentController::class, 'add_student']);
+Route::post('hahaha',[ studentController::class, 'add']);
+
 

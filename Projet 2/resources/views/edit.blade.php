@@ -12,22 +12,52 @@
    
 
     @foreach ($promotion as $row)
-        
+
    
     <form action="{{url('update')}}/{{$row->id}}" method="POST">
         @csrf
-
+        
         <input type="text" name="name" value="{{$row->name}}" >
         <button>click</button>
+
+        
     </form>
+    
+    <a href="{{url('addStudent')}}/{{$row->id}}"> <button> ADD STUDENT </button></a>
+
     @endforeach
 
 
-    <div>
-     <a href="{{url('addStudent')}}/{{$row->id}}"> <button  > ADD STUDENT </button></a>
+    <div>    
+        
+        @foreach ($student as $row)
+         <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>second name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                    
+                <tr>
+                    <td>{{$row->first_name}}</td>
+                    <td>{{$row->last_name}}</td>
+                    <td>{{$row->email}}</td>
+                </tr>
+              
+    
+            </tbody>
+         </table>
+         @endforeach
+        </div>
+    
 
 
-    </div>
+    
+    
 
 
 </body>

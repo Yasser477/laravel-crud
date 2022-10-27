@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\promotion;
+use App\Models\StudentModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
 {
@@ -10,7 +12,7 @@ class CrudController extends Controller
         $promo = new promotion();
         $promo->name = $req->name;
         $promo->save();
-        return view('test');
+        return redirect('test');
         
     }
 
@@ -21,19 +23,19 @@ class CrudController extends Controller
     }
 
     public function edit($id){
-       
 
-
-
+        $student = DB::table('student_models')
+        ->join('promotions','promotions.id','=','student_models.promotion_id')
+        ->select('student_models.*')
+        ->where('promotions.id',$id)
+        ->get();
         $promotion = promotion::where('id', $id)->get();
-        return view("edit",compact('promotion'));
-
-
+        return view("edit",compact('promotion','student'));
+        
     }
 
     public function update(Request $request, $id){
         $promotion = promotion::where('id', $id)->update(["name"=> $request->name]);
-
         return redirect('test');
     }
 
@@ -48,9 +50,6 @@ class CrudController extends Controller
             $data = promotion::where('name', 'like', '%' . $searchResult . '%')->get();
             return $data;
         }
-
-
-
     }
 
 

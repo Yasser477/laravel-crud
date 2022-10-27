@@ -7,14 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="{{url("hahaha")}}" method="POST">
+    @csrf 
      <input type="text" placeholder="name" name="Fname"> <br> <br>
      <input type="text" placeholder="second name" name="secName"><br><br>
-
      <input type="text" placeholder="email" name="email"><br><br>
-
-     <button> add student </button>
-
+     <input type="hidden" value="{{$id}}" name="Promoid">
+     <button type="submit"> add student </button>
     </form>
+
+
+   
+
+
 </body>
 </html>
