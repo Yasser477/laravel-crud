@@ -28,7 +28,7 @@
         </div>
      
         <div>
-                    <input type="text" id="search">
+                    <input type="text" id="search" placeholder="search">
 
         </div>
 

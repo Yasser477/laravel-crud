@@ -3,6 +3,7 @@ let para = document.querySelector("#para");
 
 search.addEventListener("keyup", () => {
         fetch("search/" + search.value, {
+        
             method: "GET"
         }).then((res) => {
             return res.json();
