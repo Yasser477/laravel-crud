@@ -21,8 +21,9 @@
         <div id="para">
            @foreach ($data as $row)
                <div>
-                <p >  name  : {{$row->name}} <a href="edit/{{$row->id}}"></a>
+                <p >  name  : {{$row->name}} <a href="edit/{{$row->id}}">
                 <button>update</button>
+                </a>
                 <button>delete</button>
                </div>
            @endforeach
