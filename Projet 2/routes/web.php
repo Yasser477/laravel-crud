@@ -37,7 +37,14 @@ Route::get('edit/{id}', [ CrudController::class, 'edit' ]);
 Route::post('update/{id}', [ CrudController::class, 'update' ]);
 Route::get('search', [ CrudController::class, 'search']);
 Route::get('search/{searchResult}', [ CrudController::class, 'search']);
+Route::get('dltpromo/{id}',[ CrudController::class, 'deletePromo']);
+
 Route::get('addStudent/{id}',[ studentController::class, 'add_student']);
 Route::post('hahaha',[ studentController::class, 'add']);
+Route::get('getS/{id}',[ studentController::class, 'edt_S']);
+Route::post('updS/{id}',[ studentController::class, 'update']);
+Route::get('delete/{id}',[ studentController::class, 'delete']);
+
+
 
 

@@ -15,7 +15,7 @@
      <input type="hidden" value="{{$id}}" name="Promoid">
      <button type="submit"> add student </button>
     </form>
-
+    
 
    
 

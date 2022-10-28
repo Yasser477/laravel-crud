@@ -39,6 +39,7 @@ class CrudController extends Controller
         return redirect('test');
     }
 
+
     public function search($searchResult = null){
     
         // dd($request->search);
@@ -51,7 +52,14 @@ class CrudController extends Controller
             return $data;
         }
     }
+    
+    public function deletePromo($id){
+        
+        promotion::where('id',$id)->delete();
 
+        return redirect('test');
+        
+    }
 
 
 }
